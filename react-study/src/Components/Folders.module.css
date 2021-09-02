@@ -1,0 +1,41 @@
+.item {
+  border: 1px solid #000000;
+  border-radius: 7px;
+  width: 42px;
+  height: 42px;
+  background-color: #e6e6fa;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items: center;
+  padding: 3.5px;
+}
+
+.title {
+    font-family: monospace;
+    font-size: 50px;
+    color: #352511a1;
+    
+}
+
+.child {
+    border: 1px solid #000000;
+    border-radius: 3px;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    background-color: #FFFFFF;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    align-items: center;
+  }
+  .title__child {
+    display: flex;
+    justify-content: center;
+    font-family:monospace;
+    font-size: 11px;
+  }

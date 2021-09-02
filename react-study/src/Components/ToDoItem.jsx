@@ -9,7 +9,7 @@ const ToDoItem = ({title}) => {
     return (
             <div className={styles.item} onClick={() => setIsPressed (!isPressed)}>
                <div>
-                  <span className={styles.title}>{isPressed && 'Hi'}{title}</span>
+                  <span className={styles.title}>{title}</span>
               </div>
           </div>
     );
