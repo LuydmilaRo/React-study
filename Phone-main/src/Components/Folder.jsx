@@ -3,7 +3,7 @@ import TodoList from './TodoList';
 import styles from './Folder.module.css';
 import cn from 'classnames';
 
-const Folder = ({todos, modal, onClick, rootElement}) => {
+const Folder = ({todos, modal, onClick, rootElement, title}) => {
 
   const ref = useRef();
 
@@ -14,13 +14,14 @@ const Folder = ({todos, modal, onClick, rootElement}) => {
     const elm = ref.current;
     const {x: x1, y: y1} = root.getBoundingClientRect();
     const {x: x2, y: y2} = elm.getBoundingClientRect();
-    const ox = (x2 - ((x1 + 120) - 85)) * -1;
-    const oy = (y2 - ((y1 + 240) - 85)) * -1;
+    const ox = (x2 - ((x1 + 120) - 103)) * -1;
+    const oy = (y2 - ((y1 + 240) - 103)) * -1;
 
     setOffsets({ox, oy});
   }, [rootElement, ref]);
 
   return (
+    <div className={styles.title}>
       <div className={styles.wrapper}>
         {modal && <div className={styles.blur}/>}
         <div
@@ -30,8 +31,11 @@ const Folder = ({todos, modal, onClick, rootElement}) => {
             style={modal ? {marginLeft: ox + 'px', marginTop: oy + 'px'} : {}}
         >
           <TodoList currentList={todos} mini={!modal}/>
+          {modal && <div className={styles.anotation}>{title}</div>}
         </div>
       </div>
+       {!modal&&title}
+       </div>
   );
 };
 

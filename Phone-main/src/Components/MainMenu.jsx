@@ -12,7 +12,11 @@ const MainMenu = ({todos}) => {
     return acc;
   },new Set()))
 
-  const [pageIndex] = useState(1);
+  const [pageIndex, setPageIndex] = useState(1);
+
+  function onPageChange(e){
+    setPageIndex(e)
+  }
 
   const [currentList, setCurrentList] = useState([]);
 
@@ -28,7 +32,7 @@ const MainMenu = ({todos}) => {
       <div className={styles.wrapper} ref={ref}>
         <TodoList currentList={currentList} rootElement={ref} />
         <div className={styles.pointDisplay}>
-           <DotList pageCount={pageCount} pageIndex={pageIndex}/>
+           <DotList pageCount={pageCount} pageIndex={pageIndex} onPageChange={onPageChange}/>
         </div>
       </div>   
   );

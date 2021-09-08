@@ -3,14 +3,11 @@ import Dot from './Dot';
 
 
 
-const DotList = ({pageCount, pageIndex}) => {
+const DotList = ({pageCount, pageIndex, onPageChange}) => {
 
     return pageCount.map((e,i)=>{
-    if (pageIndex === e)
-      return <Dot active = {true}/>
-      else 
-      return <Dot/>
+      return <Dot active = {pageIndex === e} onClick={() => onPageChange(e)}/>
     })
-}
+};
 
 export default DotList;

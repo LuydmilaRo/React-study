@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './TodoItem.module.css'
-import cn from 'classnames'
+import cn from 'classnames';
+import Icons from './Icons';
 
-const TodoItem = ({title, onClick, mini}) => {
+const TodoItem = ({title, mini, icon}) => {
   return (
-    <div className={cn(styles.item, {[styles.mini]: mini})} onClick={onClick}>
-      <span className={styles.title}>{title}</span>
+    <div>
+    <div className={cn(styles.item, {[styles.mini]: mini})}>
+    <Icons className={styles.icon} name= {icon}/>
+    </div>
+      <div className={styles.title}>{!mini && title}</div>
     </div>
   );
 };

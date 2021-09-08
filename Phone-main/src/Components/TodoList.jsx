@@ -4,6 +4,7 @@ import Folder from './Folder';
 
 
 
+
 const TodoList = ({currentList, mini, rootElement}) => {
 
   const [openIndex, setOpenIndex] = useState(-1);
@@ -15,13 +16,13 @@ const TodoList = ({currentList, mini, rootElement}) => {
   return currentList.map((e, i) => {
       if (e.children)
         return <Folder
-            
+            title={e.title}
             todos={e.children}
             modal={openIndex === i}
             rootElement={rootElement}
             onClick={() => onFolderClick(i)} />
       else
-        return <TodoItem title={e.title} mini={mini} />
+        return <TodoItem title={e.title} mini={mini} icon= {e.icon} />
     })
 
 };
