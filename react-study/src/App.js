@@ -1,46 +1,23 @@
-import ToDoList from "./Components/ToDoList";
+import ToDoList from './Components/ToDoList';
 import styles from './Components/App.module.css';
+import MainMenu from './Components/MainMenu';
 
 function App() {
-    const todos = [{title: 'A'},
-                   {title: 'Б'},
-                   {title: 'В'}, 
-                   {title: 'Г'},
-                   {title: 'Д'},
-                   {title: 'Е'},
-                   {title: 'Ё', children : [ {title: 'A'}, {title: 'B'}, {title: 'C'}, {title: 'D'}, {title: 'E'},{title: 'F'},{title: 'G'},{title: 'H'},{title: 'J'}, ]},
-                   {title: 'Ж'},
-                   {title: 'З'},
-                   {title: 'И'},
-                   {title: 'Й'},
-                   {title: 'К'},
-                   {title: 'Л'},
-                   {title: 'М'},
-                   {title: 'Н'},
-                   {title: 'О'},
-                   {title: 'П'},
-                   {title: 'Р'},
-                   {title: 'С'},
-                   {title: 'Т'},
-                   {title: 'У'},
-                   {title: 'Ф'},
-                   {title: 'Х'},
-                   {title: 'Ц'},
-                   {title: 'Ч'},
-                   {title: 'Ш'},
-                   {title: 'Щ'},
-                   {title: 'Ъ'},
-                   {title: 'Ы'},
-                   {title: 'Ь'},
-                   {title: 'Э'},
-                   {title: 'Ю'}]
+  const todos = ['А', 'Б', 'С', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь']
 
+  const items = [
+    {title: 'A'},
+    {title: 'Б'},
+    {title: 'В', children: [ {title: 'Г'}, {title: 'Д'} ]},
+    {title: 'В', children: [ {title: 'Г'}, {title: 'Д'} ]},
+    {title: 'В', children: [ {title: 'Г'}, {title: 'Д'}, {title: 'Е'} ]}
+  ]
 
-    return (
-        <div className = {styles.wrapper}>
-          <ToDoList todos={todos}/>
-        </div>
-    );
-};
+  return (
+      <div className = {styles.wrapper}>
+        <MainMenu todos={items}/>
+      </div>
+  );
+}
 
 export default App;

@@ -1,10 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
-import styles from './Folders.module.css';
-import ToDoList from './ToDoList';
+import TodoList from './TodoList';
+import styles from './Folder.module.css';
 import cn from 'classnames';
 
-
-const Folders = ({todos, modal, onClick, rootElement}) => {
+const Folder = ({todos, modal, onClick, rootElement}) => {
 
   const ref = useRef();
 
@@ -30,10 +29,10 @@ const Folders = ({todos, modal, onClick, rootElement}) => {
             onClick={onClick}
             style={modal ? {marginLeft: ox + 'px', marginTop: oy + 'px'} : {}}
         >
-          <ToDoList todos={todos} mini={!modal}/>
+          <TodoList currentList={todos} mini={!modal}/>
         </div>
       </div>
   );
 };
 
-export default Folders;
+export default Folder;

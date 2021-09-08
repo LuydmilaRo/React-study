@@ -1,18 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './ToDoItem.module.css';
+import cn from 'classnames';
 
-const ToDoItem = ({title}) => {
-
-
-
-    const [isPressed, setIsPressed]=useState (false);
+const ToDoItem = ({title, onClick, mini}) => {
     return (
-            <div className={styles.item} onClick={() => setIsPressed (!isPressed)}>
-               <div>
-                  <span className={styles.title}>{title}</span>
-              </div>
-          </div>
-    );
-};
-
-export default ToDoItem;
+      <div className={cn(styles.item, {[styles.mini]: mini})} onClick={onClick}>
+        <span className={styles.title}>{title}</span>
+      </div>
+    )
+  };
+  
+  export default ToDoItem;

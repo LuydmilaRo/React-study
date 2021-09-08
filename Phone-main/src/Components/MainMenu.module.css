@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-wrap:wrap;
+  border: 6px solid #000000;
+  padding: 4px;
+  width: 240px;
+  height: 460px;
+  border-radius: 20px;
+  background-image: url('../1.jpg');
+  position: relative;
+  align-content: flex-start;
+}
+
+.pointDisplay{
+  display: flex;
+    width: 96%;
+    justify-content: center;
+    align-items: end;
+    height: 12%; 
+    position: absolute;
+    bottom: 15px;
+    
+}
